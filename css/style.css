@@ -163,3 +163,51 @@ body {
 #dejar-resena-form button:hover {
   background-color: #45a049;
 }
+
+.oferta-card {
+  border: 2px solid #ddd;
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.oferta-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.oferta-card p {
+  margin: 10px 0;
+}
+
+.nombre {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.precio {
+  color: #e44d26; /* Color naranja */
+}
+
+.descuento {
+  color: #4caf50; /* Color verde */
+}
+
+.duracion {
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-150%);
+  background-color: #f00; /* Color rojo */
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.oferta-imagen {
+  width: 300px;
+  height: auto;
+}
