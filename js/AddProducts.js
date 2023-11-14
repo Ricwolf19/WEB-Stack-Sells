@@ -34,10 +34,41 @@ class Producto {
 }
 
 const productos = [
-  new Producto('Laptop', 1200, 15, 'https://m.media-amazon.com/images/I/819gjFWWnPL._AC_UF894,1000_QL80_.jpg'),
-  new Producto('Teléfono', 800, 30, 'https://m.media-amazon.com/images/I/71jfKwFR1rL.jpg'),
-  new Producto('Tableta', 400, 20, 'https://i.blogs.es/0f6446/apple-ipad-pro-2021/1366_2000.jpg'),
+  new Producto(getRandomName(), getRandomNumber(500, 1500), getRandomNumber(10, 50), 'https://m.media-amazon.com/images/I/61WQ0mBtBYL._AC_UL320_.jpg'),
+  new Producto(getRandomName(), getRandomNumber(300, 1000), getRandomNumber(20, 60), 'https://m.media-amazon.com/images/I/41+1Csr1pSL._AC_UL320_.jpg'),
+  new Producto(getRandomName(), getRandomNumber(300, 1000), getRandomNumber(15, 40), 'https://m.media-amazon.com/images/I/71+ou1adXXL._AC_UY218_.jpg'),
+  new Producto(getRandomName(), getRandomNumber(300, 1000), getRandomNumber(10, 30), 'https://m.media-amazon.com/images/I/717Wz1EAR5L.__AC_SX300_SY300_QL70_FMwebp_.jpg'),
+  new Producto(getRandomName(), getRandomNumber(300, 1000), getRandomNumber(5, 25), 'https://m.media-amazon.com/images/I/51kdpRWABzL._AC_UY218_.jpg'),
+  new Producto(getRandomName(), getRandomNumber(300, 1000), getRandomNumber(15, 40), 'https://m.media-amazon.com/images/I/61Q-xaqufQL._AC_UY218_.jpg'),
+  new Producto(getRandomName(), getRandomNumber(300, 1000), getRandomNumber(10, 30), 'https://m.media-amazon.com/images/I/61E+6my831L._AC_UY218_.jpg'),
+  new Producto(getRandomName(), getRandomNumber(300, 1000), getRandomNumber(5, 25), 'https://m.media-amazon.com/images/I/81DeRseorML._AC_UY218_.jpg'),
+  new Producto(getRandomName(), getRandomNumber(300, 1000), getRandomNumber(15, 40), 'https://m.media-amazon.com/images/I/71EsQS+UUxL._AC_UY218_.jpg'),
+  new Producto(getRandomName(), getRandomNumber(300, 1000), getRandomNumber(10, 30), 'https://m.media-amazon.com/images/I/71eVdRiG+eL._AC_UY218_.jpg'),
+  new Producto(getRandomName(), getRandomNumber(300, 1000), getRandomNumber(5, 25), 'https://m.media-amazon.com/images/I/61Ra0-2X8TL._AC_UL320_.jpg'),
+  new Producto(getRandomName(), getRandomNumber(300, 1000), getRandomNumber(15, 40), 'https://m.media-amazon.com/images/I/71STBdY63cL._AC_UY218_.jpg'),
+  new Producto(getRandomName(), getRandomNumber(300, 1000), getRandomNumber(10, 30), 'https://m.media-amazon.com/images/I/6125OlgSCyL._AC_UL320_.jpg'),
+  new Producto(getRandomName(), getRandomNumber(300, 1000), getRandomNumber(5, 25), 'https://m.media-amazon.com/images/I/712gr0p2VTL._AC_UL320_.jpg'),
+  new Producto(getRandomName(), getRandomNumber(300, 1000), getRandomNumber(15, 40), 'https://m.media-amazon.com/images/I/71gIJl1OJ1L._AC_UL320_.jpg'),
+  new Producto(getRandomName(), getRandomNumber(300, 1000), getRandomNumber(10, 30), 'https://m.media-amazon.com/images/I/71oRQ2nTOqL._AC_UL320_.jpg'),
+  new Producto(getRandomName(), getRandomNumber(300, 1000), getRandomNumber(5, 25), 'https://m.media-amazon.com/images/I/71jfKwFR1rL.jpg'),
+  new Producto(getRandomName(), getRandomNumber(300, 1000), getRandomNumber(15, 40), 'https://m.media-amazon.com/images/I/71ggm-13clL._AC_UL320_.jpg'),
+  new Producto(getRandomName(), getRandomNumber(300, 1000), getRandomNumber(10, 30), 'https://m.media-amazon.com/images/I/4161BoDqu3L._AC_UL320_.jpg'),
+  new Producto(getRandomName(), getRandomNumber(300, 1000), getRandomNumber(5, 25), 'https://m.media-amazon.com/images/I/51SKmu2G9FL._AC_UL320_.jpg'),
 ];
+
+function getRandomName() {
+  const adjectives = ['Powerful', 'Sleek', 'Innovative', 'Futuristic', 'Elite', 'Advanced', 'Premium'];
+  const nouns = ['Device', 'Gadget', 'Machine', 'Appliance', 'Contraption', 'Instrument', 'Tool'];
+
+  const randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+  const randomNoun = nouns[Math.floor(Math.random() * nouns.length)];
+
+  return `${randomAdjective} ${randomNoun}`;
+}
+
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 const carrito = [];
 
