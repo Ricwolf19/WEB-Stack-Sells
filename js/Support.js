@@ -1,40 +1,81 @@
+// Clase que representa una solicitud de soporte
 class SolicitudSoporte {
-    constructor(nombre, descripcion) {
-      this.nombre = nombre;
-      this.descripcion = descripcion;
-    }
+  constructor(nombre, descripcion) {
+    this.nombre = nombre;
+    this.descripcion = descripcion;
   }
-  
-  const solicitudesPendientes = [];
-  
-  function enviarSolicitud(e) {
-    e.preventDefault();
-  
-    const nombre = document.getElementById('nombre').value;
-    const descripcion = document.getElementById('descripcion').value;
-  
-    if (nombre && descripcion) {
-      const nuevaSolicitud = new SolicitudSoporte(nombre, descripcion);
-      solicitudesPendientes.push(nuevaSolicitud);
-  
-      mostrarSolicitudesPendientes();
-      document.getElementById('formSolicitud').reset();
-    } else {
-      alert('Ingrese todos los campos para enviar la solicitud.');
-    }
+}
+
+// Array que almacenará las solicitudes de soporte pendientes
+const solicitudesPendientes = [];
+
+// Función para enviar una nueva solicitud de soporte
+function enviarSolicitud(e) {
+  e.preventDefault(); // Evita que el formulario se envíe y la página se recargue
+
+  // Obtiene los valores de los campos del formulario
+  const nombre = document.getElementById('nombre').value;
+  const descripcion = document.getElementById('descripcion').value;
+
+  // Verifica que ambos campos estén llenos
+  if (nombre && descripcion) {
+    // Crea una nueva instancia de SolicitudSoporte
+    const nuevaSolicitud = new SolicitudSoporte(nombre, descripcion);
+
+    // Agrega la nueva solicitud al array de solicitudes pendientes
+    solicitudesPendientes.push(nuevaSolicitud);
+
+    // Muestra las solicitudes pendientes en la interfaz
+    mostrarSolicitudesPendientes();
+
+    // Reinicia el formulario después de enviar la solicitud
+    document.getElementById('formSolicitud').reset();
+  } else {
+    alert('Ingrese todos los campos para enviar la solicitud.');
   }
-  
-  function mostrarSolicitudesPendientes() {
-    const solicitudesLista = document.getElementById('solicitudes-lista');
-    solicitudesLista.innerHTML = '';
-  
-    solicitudesPendientes.forEach(solicitud => {
-      const li = document.createElement('li');
-      li.textContent = `${solicitud.nombre}: ${solicitud.descripcion}`;
-      solicitudesLista.appendChild(li);
-    });
-  }
-  
-  window.addEventListener('load', mostrarSolicitudesPendientes);
-  document.getElementById('formSolicitud').addEventListener('submit', enviarSolicitud);
-  
+}
+
+// Función para mostrar las solicitudes pendientes en la interfaz
+function mostrarSolicitudesPendientes() {
+  const solicitudesLista = document.getElementById('solicitudes-lista');
+  solicitudesLista.innerHTML = ''; // Limpia la lista antes de volver a llenarla
+
+  // Recorre todas las solicitudes pendientes y las agrega a la lista
+  solicitudesPendientes.forEach(solicitud => {
+    const li = document.createElement('li');
+    li.textContent = `${solicitud.nombre}: ${solicitud.descripcion}`;
+    solicitudesLista.appendChild(li);
+  });
+}
+
+// Evento que se ejecuta cuando la ventana se ha cargado completamente
+window.addEventListener('load', mostrarSolicitudesPendientes);
+
+// Evento que se ejecuta cuando se envía el formulario de solicitud
+document.getElementById('formSolicitud').addEventListener('submit', enviarSolicitud);
+
+
+/*
+Documentacion de Support.js
+
+1. **`SolicitudSoporte` Clase:**
+   - Representa una solicitud de soporte.
+   - Utiliza una clase para organizar la información relacionada con una solicitud.
+
+2. **`solicitudesPendientes` Array:**
+   - Almacena las solicitudes pendientes.
+   - Un ejemplo de estructura de datos tipo lista (array) para gestionar las solicitudes.
+
+3. **`enviarSolicitud` Función:**
+   - Crea una nueva instancia de `SolicitudSoporte`.
+   - Utiliza un array (`solicitudesPendientes`) para almacenar y gestionar las solicitudes.
+   - Reinicia el formulario después de enviar la solicitud.
+
+4. **`mostrarSolicitudesPendientes` Función:**
+   - Muestra las solicitudes pendientes en la interfaz.
+   - Utiliza un bucle para recorrer el array de solicitudes y agregarlas a la lista en el documento HTML.
+
+5. **Event Listeners:**
+   - El evento `load` asegura que las solicitudes pendientes se muestren cuando la página se carga.
+   - El evento `submit` maneja el envío del formulario de solicitud y llama a la función `enviarSolicitud`.
+*/

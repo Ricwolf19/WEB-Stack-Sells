@@ -1,32 +1,35 @@
+// Clase que representa una reseña
 class Reseña {
-    constructor(usuario, puntuacion, comentario) {
-      this.usuario = usuario;
-      this.puntuacion = puntuacion;
-      this.comentario = comentario;
-    }
-  
-    obtenerHTML() {
-      const card = document.createElement('div');
-      card.classList.add('reseña-card');
-  
-      const usuarioIcono = document.createElement('span');
-      usuarioIcono.classList.add('usuario-icon');
-      usuarioIcono.textContent = '👤';
-  
-      const info = document.createElement('div');
-      info.innerHTML = `
-        <p>Usuario: ${this.usuario}</p>
-        <p>Puntuación: ${this.puntuacion} ⭐</p>
-        <p>Comentario: ${this.comentario}</p>
-      `;
-  
-      card.appendChild(usuarioIcono);
-      card.appendChild(info);
-  
-      return card;
-    }
+  constructor(usuario, puntuacion, comentario) {
+    this.usuario = usuario;
+    this.puntuacion = puntuacion;
+    this.comentario = comentario;
   }
-  
+
+  // Método que devuelve el HTML para mostrar la reseña
+  obtenerHTML() {
+    const card = document.createElement('div');
+    card.classList.add('reseña-card');
+
+    const usuarioIcono = document.createElement('span');
+    usuarioIcono.classList.add('usuario-icon');
+    usuarioIcono.textContent = '👤';
+
+    const info = document.createElement('div');
+    info.innerHTML = `
+      <p>Usuario: ${this.usuario}</p>
+      <p>Puntuación: ${this.puntuacion} ⭐</p>
+      <p>Comentario: ${this.comentario}</p>
+    `;
+
+    card.appendChild(usuarioIcono);
+    card.appendChild(info);
+
+    return card;
+  }
+}
+
+// Array que almacena las reseñas existentes
 const reseñas = [
   new Reseña('Usuario1', 4, 'Gran experiencia de compra en Stack Sells. ¡Recomiendo totalmente!'),
   new Reseña('Usuario2', 5, 'Productos de alta calidad y entrega rápida. ¡Volveré a comprar!'),
@@ -50,30 +53,63 @@ const reseñas = [
   new Reseña('Usuario20', 4, 'Sitio confiable. Buenos precios y servicio rápido.'),
 ];
 
+// Función para mostrar las reseñas existentes en la interfaz
 function mostrarReseñasHTML() {
-    const reseñasDiv = document.getElementById('reseñas-container');
-    reseñasDiv.innerHTML = '';
-  
-    reseñas.forEach(reseña => {
-      const card = reseña.obtenerHTML();
-      reseñasDiv.appendChild(card);
-    });
-  }
-  
-  window.addEventListener('load', () => {
-    mostrarReseñasHTML();
-  });
+  const reseñasDiv = document.getElementById('reseñas-container');
+  reseñasDiv.innerHTML = '';
 
+  // Recorre todas las reseñas y las agrega a la interfaz
+  reseñas.forEach(reseña => {
+    const card = reseña.obtenerHTML();
+    reseñasDiv.appendChild(card);
+  });
+}
+
+// Evento que se ejecuta cuando la ventana se ha cargado completamente
+window.addEventListener('load', () => {
+  mostrarReseñasHTML();
+});
+
+// Función para permitir a los usuarios dejar una nueva reseña
 function dejarReseña() {
   const nombre = prompt('Ingresa tu nombre:');
   const puntuacion = prompt('Califica del 1 al 5:');
   const comentario = prompt('Deja tu comentario:');
 
+  // Verifica que se hayan ingresado todos los campos necesarios
   if (nombre && puntuacion && comentario) {
+    // Crea una nueva instancia de Reseña y la agrega al array de reseñas
     const nuevaReseña = new Reseña(nombre, parseInt(puntuacion), comentario);
     reseñas.push(nuevaReseña);
+
+    // Muestra las reseñas actualizadas en la interfaz
     mostrarReseñasHTML();
   } else {
     alert('Ingresa todos los campos para dejar una reseña válida.');
   }
 }
+
+/*
+Documentacion de Reviews.js
+
+1. **`Reseña` Clase:**
+   - Representa una reseña.
+   - Utiliza una clase para organizar la información relacionada con una reseña.
+
+2. **`reseñas` Array:**
+   - Almacena las reseñas existentes.
+   - Un ejemplo de estructura de datos tipo lista (array) para gestionar las reseñas.
+
+3. **`obtenerHTML` Método:**
+   - Devuelve el HTML necesario para mostrar la información de una reseña en la interfaz.
+   - Encapsula la lógica de presentación dentro de la propia clase.
+
+4. **`mostrarReseñasHTML` Función:**
+   - Muestra las reseñas existentes en la interfaz.
+   - Utiliza un bucle para recorrer el array de reseñas y agregarlas a la lista en el documento HTML.
+
+5. **Event Listeners:**
+   - El evento `load` asegura que las reseñas se muestren cuando la página se carga.
+   - La función `dejarReseña` permite a los usuarios dejar una nueva reseña y actualiza la interfaz.
+
+*/
