@@ -33,7 +33,7 @@ class Oferta {
     comprarButton.textContent = 'Comprar';
     comprarButton.classList.add('comprar-button');
     comprarButton.addEventListener('click', () => {
-      window.location.href = 'Products.html';
+      window.location.href = '/pages/Products.html';
     });
 
     const contador = info.querySelector('.contador');
