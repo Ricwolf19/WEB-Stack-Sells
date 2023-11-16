@@ -53,6 +53,13 @@ const reseñas = [
   new Reseña('Usuario20', 4, 'Sitio confiable. Buenos precios y servicio rápido.'),
 ];
 
+reseñas.push(...getReviewsFromLocalStorage());
+
+function getReviewsFromLocalStorage() {
+  const reviews = JSON.parse(localStorage.getItem('reviews') || '[]');
+  return reviews.map(review => new Reseña(review.usuario, review.puntuacion, review.comentario));
+}
+
 // Función para mostrar las reseñas existentes en la interfaz
 function mostrarReseñasHTML() {
   const reseñasDiv = document.getElementById('reseñas-container');
@@ -81,6 +88,8 @@ function dejarReseña() {
     // Crea una nueva instancia de Reseña y la agrega al array de reseñas
     const nuevaReseña = new Reseña(nombre, parseInt(puntuacion), comentario);
     reseñas.push(nuevaReseña);
+    
+    localStorage.setItem('reviews', JSON.stringify(reseñas));
 
     // Muestra las reseñas actualizadas en la interfaz
     mostrarReseñasHTML();

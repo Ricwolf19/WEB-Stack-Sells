@@ -7,7 +7,12 @@ class SolicitudSoporte {
 }
 
 // Array que almacenará las solicitudes de soporte pendientes
-const solicitudesPendientes = [];
+const solicitudesPendientes = getSuggestionsFromLocalStorage();
+
+function getSuggestionsFromLocalStorage() {
+  const suggestions = JSON.parse(localStorage.getItem('suggestions') || '[]');
+  return suggestions.map(suggestion => new SolicitudSoporte(suggestion.nombre, suggestion.descripcion));
+}
 
 // Función para enviar una nueva solicitud de soporte
 function enviarSolicitud(e) {
@@ -24,6 +29,8 @@ function enviarSolicitud(e) {
 
     // Agrega la nueva solicitud al array de solicitudes pendientes
     solicitudesPendientes.push(nuevaSolicitud);
+
+    localStorage.setItem('suggestions', JSON.stringify(solicitudesPendientes));
 
     // Muestra las solicitudes pendientes en la interfaz
     mostrarSolicitudesPendientes();
