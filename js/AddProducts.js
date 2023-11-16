@@ -59,6 +59,11 @@ const productos = [
   new Producto(getRandomName(), getRandomNumber(300, 1000), getRandomNumber(5, 25), 'https://m.media-amazon.com/images/I/51SKmu2G9FL._AC_UL320_.jpg'),
 ];
 
+function getCartFromLocalStorage() {
+  const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+  return cart.map(item => ({ producto: new Producto(item.producto.nombre, item.producto.precio, item.producto.inventario, item.producto.imagen), cantidad: item.cantidad }));
+}
+
 // Función que genera un nombre aleatorio
 function getRandomName() {
   const adjectives = ['Powerful', 'Sleek', 'Innovative', 'Futuristic', 'Elite', 'Advanced', 'Premium'];
@@ -76,7 +81,7 @@ function getRandomNumber(min, max) {
 }
 
 // Array que representa el carrito de compras
-const carrito = [];
+const carrito = getCartFromLocalStorage(); 
 
 // Función que muestra los productos en la interfaz
 function mostrarProductosHTML(productosArray, onComprar) {
@@ -87,12 +92,6 @@ function mostrarProductosHTML(productosArray, onComprar) {
     const card = producto.obtenerHTML(onComprar);
     productosDiv.appendChild(card);
   });
-}
-
-// Función que agrega un producto al carrito
-function agregarProductoAlCarrito(producto) {
-  carrito.push(producto);
-  mostrarCarritoHTML();
 }
 
 // Función que muestra los productos en el carrito
@@ -136,11 +135,6 @@ window.addEventListener('load', () => {
 // Evento que escucha el envío del formulario para agregar un producto
 document.getElementById('formProducto').addEventListener('submit', agregarProducto);
 
-function agregarProductoAlCarrito(producto) {
-  carrito.push(producto);
-  mostrarCarritoHTML();
-}
-
 
 function agregarProductoAlCarrito(producto) {
   const cantidadSeleccionada = prompt(`¿Cuántos ${producto.nombre} desea comprar?`, 1);
@@ -162,6 +156,7 @@ function agregarProductoAlCarrito(producto) {
       } else {
         // Si no está en el carrito, agregarlo
         carrito.push({ producto, cantidad });
+        localStorage.setItem('cart', JSON.stringify(carrito));
       }
 
       mostrarCarritoHTML();
