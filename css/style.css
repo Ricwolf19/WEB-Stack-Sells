@@ -1,213 +1,60 @@
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav ul li {
-    display: inline;
-    margin-right: 20px;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: #fff;
-  }
-  
-  section {
-    margin: 20px;
-  }
-  
-  #productos-container {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .producto-card {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
-    width: 200px;
-  }
-  
-  .producto-card img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-  }
-  
-  form {
-    border: 1px solid #ddd;
-    padding: 20px;
-  }
-  
-  button {
-    background-color: #4caf50;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
-  input {
-    padding: 8px;
-    margin-bottom: 10px;
-  }
-  
-  h2 {
-    color: #333;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Kdam+Thmor+Pro&display=swap');
 
-  #carrito-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-  }
-  
-  .cantidad {
-    margin-top: 5px;
-    font-weight: bold;
-  }
-  
-  #solicitud-soporte,
-  #solicitudes-pendientes {
-    border: 2px solid #ddd; /* Aumentar el grosor del borde */
-    border-radius: 10px; /* Añadir bordes redondeados */
-    padding: 30px; /* Aumentar el espacio interno */
-    margin: 20px;
-    text-align: center;
-  }
-  
-  /* Estilo específico para la sección de solicitud de soporte */
-  #solicitud-soporte {
-    background-color: #f2f2f2; /* Color de fondo más claro */
-  }
-  
-  /* Estilo específico para la sección de solicitudes pendientes */
-  #solicitudes-pendientes {
-    background-color: #ffffff; /* Color de fondo blanco */
-  }
-  
-  /* Añadir sombra para destacar las secciones */
-  #solicitud-soporte,
-  #solicitudes-pendientes {
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Añadir sombra suave */
-  }
-  
-  #reseñas-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    justify-content: center;
+/* Fonst */
+/* font-family: 'Chakra Petch', sans-serif;
+font-family: 'Kdam Thmor Pro', sans-serif;  */ 
+
+.navbar {
+  background-color: #fff;
+  border-bottom: 5px solid #fff;
+  border-image: linear-gradient(to left, #3acfd5 0%, #3a4ed5 100%) 1;
+  font-family: 'Kdam Thmor Pro', sans-serif;
 }
 
-.reseña-card {
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 10px;
-    text-align: left;
-    max-width: 400px;
+.navbar-nav a {
+  border-bottom: 3px solid transparent;
 }
 
-.usuario-icon {
-    font-size: 20px;
-    margin-right: 10px;
+.navbar-nav a.active {
+  border-bottom: 3px solid #ff006e;
 }
 
-/* Nuevo estilo para el formulario de reseñas */
-#dejar-resena-form {
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 20px auto; /* Modificado para centrar el formulario */
-  text-align: center;
-  max-width: 400px;
+.navbar-nav a.active:hover {
+  border-bottom: 3px solid #ff006e;
 }
 
-#dejar-resena-form input,
-#dejar-resena-form textarea {
-  width: calc(100% - 20px); /* Modificado para ajustar el ancho correctamente */
-  padding: 10px;
-  margin-bottom: 10px;
+.navbar-nav a:hover{
+  border-bottom: 3px solid #00b4d8;
+  /* border-image: linear-gradient(to right, #3acfd5 0%, #3a4ed5 100%) 1; */
 }
 
-#dejar-resena-form button {
-  background-color: #4caf50;
+.navbar .btn {
+  clip-path: polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);
+  border-radius: 0;
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+}
+
+.navbar #btn-register:hover{
+  background-color: #7209b7;
   color: #fff;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
 }
 
-#dejar-resena-form button:hover {
-  background-color: #45a049;
+.navbar #btn-login{
+  background-color: #4361ee;
+  color: #fff;
 }
 
-.oferta-card {
-  border: 2px solid #ddd;
-  padding: 20px;
-  margin: 20px;
-  text-align: center;
+.navbar #btn-login:hover{
+  background-color: #2144e2;
+  color: #fff;
+}
+
+/* Hero Styles */
+#hero-container {
   position: relative;
-  overflow: hidden;
 }
 
-.oferta-card img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 10px;
-}
-
-.oferta-card p {
-  margin: 10px 0;
-}
-
-.nombre {
-  font-weight: bold;
-  font-size: 1.2em;
-}
-
-.precio {
-  color: #e44d26; /* Color naranja */
-}
-
-.descuento {
-  color: #4caf50; /* Color verde */
-}
-
-.duracion {
-  position: absolute;
-  bottom: 70px;
-  left: 50%;
-  transform: translateX(-150%);
-  background-color: #f00; /* Color rojo */
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-
-.oferta-imagen {
-  width: 300px;
-  height: auto;
-}
