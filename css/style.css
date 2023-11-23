@@ -55,6 +55,220 @@ font-family: 'Kdam Thmor Pro', sans-serif;  */
 
 /* Hero Styles */
 #hero-container {
+  height: 50vh;
+}
+
+#hero-bg,#hero-text {
+  clip-path: polygon(100% 0, 100% 95%, 95% 100%, 0 100%, 0 0);
+}
+
+#hero-bg {
+  background-image: linear-gradient(to left, #3acfd5 0%, #3a4ed5 100%);
+  height: 100%;
+  padding: 0 10px 10px 0;
+}
+
+#hero-text {
+  background: rgb(255,255,255);
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(210,210,210,1) 100%);
+  height: 100%;
+}
+
+#hero-text-bg{
+  /* background-image: url(/img/index/bg-hero.webp);
+  background-size: 100%;
+  background-repeat: no-repeat; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Chakra Petch', sans-serif;
   position: relative;
 }
 
+#hero-text h2 {
+  font-size: 72px;
+  font-weight: 400;
+}
+
+#hero-text span {
+  font-weight: bold;
+  /* color: ; */
+}
+
+/* About Us styles */
+#aboutUs-container {
+  margin: 20px 0;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(/img/index/bg-aboutUs.webp);
+  background-size: cover;
+}
+
+#aboutUs-container-img, #aboutUs-container-img img {
+  clip-path: polygon(20px 0,100% 0,100% calc(100% - 20px),calc(100% - 20px) 100%,0 100%,0 20px);
+}
+
+#aboutUs-container-img {
+  background: rgb(86,46,255);
+  background: linear-gradient(90deg, rgba(86,46,255,1) 0%, rgba(227,95,255,1) 100%);
+  height: 100%;
+  width: 25%;
+  margin-left: 50px;
+  padding: 5px;
+}
+
+#aboutUs-container-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: all 1s;
+}
+
+#aboutUs-container-img img:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 13px 0px #000000;
+  -webkit-box-shadow: 0px 0px 13px 0px #000000;
+  animation: colorChange 2s infinite;
+}
+
+#aboutUs-container-line {
+  background: linear-gradient(90deg, rgba(86,46,255,1) 0%, rgba(227,95,255,1) 100%);
+  width: 25%;
+  height: 5px;
+}
+
+#aboutUs-container-bg, #aboutUs-container-text {
+  clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 91%, 90% 100%, 10% 100%, 0 90%, 0 10%);
+}
+
+#aboutUs-container-bg {
+  background: rgb(86,46,255);
+  background: linear-gradient(90deg, rgba(86,46,255,1) 0%, rgba(227,95,255,1) 100%);
+  padding: 10px;
+  width: 40%;
+  height: 100%;
+  position: relative;
+}
+
+#aboutUs-container-bg-figure {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  position: absolute;
+  z-index: 2;
+}
+
+#about-figure-1, #about-figure-2, #about-figure-3, #about-figure-4 {
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  position: absolute;
+  background-color: #a2a2a2;
+  width: 15px;
+  height: 15px;
+  z-index: 3;
+}
+
+#about-figure-1 {
+  top: 40px;
+  left: 40px;
+}
+
+#about-figure-2 {
+  top: 40px;
+  right: 40px;
+}
+
+#about-figure-3 {
+  bottom: 40px;
+  left: 40px;
+}
+
+#about-figure-4 {
+  bottom: 40px;
+  right: 40px;
+}
+
+#aboutUs-container-text {
+  background: rgb(236, 236, 236);
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Chakra Petch', sans-serif;
+  text-align: center;
+  z-index: 5;
+}
+
+#aboutUs-container-text h3{
+font-weight: bold;
+}
+
+/* Types of products styles */
+#type-container {
+  height: 50vh;
+  background-color: #000000;
+  background-image: url(/img/index/bg-type.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform-origin: center center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  animation: background-animation 5s infinite ease-in-out;
+  overflow: hidden;
+}
+
+#type-container-ship {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#ship {
+  width: 100%;
+  height: 50%;
+  background-image: url(/img/index/img-spaceship.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: ship-animation 10s infinite ease;
+}
+
+/* Animations */
+/* @keyframes background-animation {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: cover;
+  }
+  100% {
+    background-position: 0 0;
+  }
+} */
+
+@keyframes ship-animation {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(100px) translateY(100px);
+  }
+  50% {
+    transform: translateX(50px) translateY(100px);
+  }
+  75% {
+    transform: translateX(100px) translateY(50px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+
+}
