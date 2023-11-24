@@ -10,7 +10,7 @@ class Producto {
   // Método que devuelve el HTML para mostrar la información del producto
   obtenerHTML(onComprar) {
     const card = document.createElement('div');
-    card.classList.add('producto-card');
+    card.classList.add('product-card');
 
     const img = document.createElement('img');
     img.src = this.imagen;
@@ -18,13 +18,14 @@ class Producto {
 
     const info = document.createElement('div');
     info.innerHTML = `
-      <p>Nombre: ${this.nombre}</p>
-      <p>Precio: $${this.precio}</p>
-      <p>Inventario: ${this.inventario}</p>
+      <p><span>Nombre:</span> ${this.nombre}</p>
+      <p><span>Precio:</span> $${this.precio}</p>
+      <p><span>Inventario:</span> ${this.inventario}</p>
     `;
 
     const comprarButton = document.createElement('button');
-    comprarButton.textContent = 'Comprar';
+    comprarButton.className = "btn";
+    comprarButton.textContent = 'Buy';
     comprarButton.addEventListener('click', () => onComprar(this));
 
     card.appendChild(img);
@@ -85,7 +86,7 @@ const carrito = getCartFromLocalStorage();
 
 // Función que muestra los productos en la interfaz
 function mostrarProductosHTML(productosArray, onComprar) {
-  const productosDiv = document.getElementById('productos-container');
+  const productosDiv = document.getElementById('product-list');
   productosDiv.innerHTML = '';
 
   productosArray.forEach(producto => {
