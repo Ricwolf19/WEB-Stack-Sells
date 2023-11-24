@@ -14,13 +14,13 @@ class Producto {
 
     const img = document.createElement('img');
     img.src = this.imagen;
-    img.alt = `Imagen de ${this.nombre}`;
+    img.alt = `Image of ${this.nombre}`;
 
     const info = document.createElement('div');
     info.innerHTML = `
-      <p><span>Nombre:</span> ${this.nombre}</p>
-      <p><span>Precio:</span> $${this.precio}</p>
-      <p><span>Inventario:</span> ${this.inventario}</p>
+      <p><span>Name:</span> ${this.nombre}</p>
+      <p><span>Price:</span> $${this.precio}</p>
+      <p><span>Inventory:</span> ${this.inventario}</p>
     `;
 
     const comprarButton = document.createElement('button');
@@ -110,10 +110,10 @@ function mostrarCarritoHTML() {
 function agregarProducto(e) {
   e.preventDefault();
 
-  const nombre = document.getElementById('nombre').value;
-  const precio = parseFloat(document.getElementById('precio').value);
-  const inventario = parseInt(document.getElementById('inventario').value);
-  const imagen = document.getElementById('imagen').value;
+  const nombre = document.getElementById('name').value;
+  const precio = parseFloat(document.getElementById('price').value);
+  const inventario = parseInt(document.getElementById('inventory').value);
+  const imagen = document.getElementById('image').value;
 
   if (nombre && !isNaN(precio) && !isNaN(inventario) && imagen) {
     const nuevoProducto = new Producto(nombre, precio, inventario, imagen);
@@ -121,9 +121,9 @@ function agregarProducto(e) {
      // Agrega el nuevo producto al array de productos
     productos.push(nuevoProducto);
     mostrarProductosHTML(productos, agregarProductoAlCarrito);
-    document.getElementById('formProducto').reset();
+    document.getElementById('formProduct').reset();
   } else {
-    alert('Ingrese datos válidos para agregar un producto.');
+    alert('Please enter valid data to add a product.');
   }
 }
 
@@ -134,11 +134,11 @@ window.addEventListener('load', () => {
 });
 
 // Evento que escucha el envío del formulario para agregar un producto
-document.getElementById('formProducto').addEventListener('submit', agregarProducto);
+document.getElementById('formProduct').addEventListener('submit', agregarProducto);
 
 
 function agregarProductoAlCarrito(producto) {
-  const cantidadSeleccionada = prompt(`¿Cuántos ${producto.nombre} desea comprar?`, 1);
+  const cantidadSeleccionada = prompt(`How many ${product.name} do you want to buy?`, 1);
 
   if (cantidadSeleccionada !== null) {
     const cantidad = parseInt(cantidadSeleccionada, 10) || 1;
@@ -163,7 +163,7 @@ function agregarProductoAlCarrito(producto) {
       mostrarCarritoHTML();
       mostrarProductosHTML(productos, agregarProductoAlCarrito);
     } else {
-      alert('La cantidad seleccionada no es válida o supera el inventario disponible.');
+      alert('The selected quantity is invalid or exceeds available inventory.');
     }
   }
 }

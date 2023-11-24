@@ -3,6 +3,9 @@
 /* Fonst */
 /* font-family: 'Chakra Petch', sans-serif;
 font-family: 'Kdam Thmor Pro', sans-serif;  */ 
+body {
+  position: relative;
+}
 
 .navbar {
   background-color: #00000029;
@@ -252,6 +255,57 @@ font-family: 'Kdam Thmor Pro', sans-serif;  */
 
 .product-card .btn:hover {
   background-color: #59b100;
+}
+
+/* Multitools styles */
+#add-product-btn {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  width: 35px;
+  padding: 0;
+  margin: 10px;
+}
+
+#add-product-btn i {
+  font-size: 34px;
+  color: #e5383b;
+}
+
+/* Modal Styles */
+#addProductModal {
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+#addProductModal h2 {
+  font-weight: bold;
+}
+
+#formProduct .form-label{
+  font-weight: 500;
+}
+
+#add-product {
+  clip-path: polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);
+  color: #fff;
+  font-weight: bold;
+  background-color: #0d47a1;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+}
+
+#add-product:hover {
+  background-color: #0a3473;
 }
 
 /* Animations */
