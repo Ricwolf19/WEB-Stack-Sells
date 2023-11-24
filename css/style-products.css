@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Kdam+Thmor+Pro&display=swap');
+
+/* Fonst */
+/* font-family: 'Chakra Petch', sans-serif;
+font-family: 'Kdam Thmor Pro', sans-serif;  */ 
+
+.navbar {
+  background-color: #00000029;
+  border-bottom: 5px solid #fff;
+  /* border-image: linear-gradient(to left, #3acfd5 0%, #3a4ed5 100%) 1; */
+  font-family: 'Kdam Thmor Pro', sans-serif;
+  border: none;
+}
+
+.navbar .container {
+  background-color: transparent;
+}
+
+.container h1 {
+  color: #ffffff;
+}
+
+.container h1:hover {
+  color: #ffffff;
+}
+
+.navbar-nav a {
+  border-bottom: 3px solid transparent;
+  color: #fff;
+}
+
+.navbar-nav .nav-link {
+  color: #fff;
+}
+
+.navbar-nav a.active {
+  border-bottom: 3px solid #ff006e;
+}
+
+.navbar-nav a.active:hover {
+  border-bottom: 3px solid #ff006e;
+}
+
+.navbar-nav a:hover{
+  border-bottom: 3px solid #00b4d8;
+  color: #d8d8d8;
+  /* border-image: linear-gradient(to right, #3acfd5 0%, #3a4ed5 100%) 1; */
+}
+
+.navbar .btn {
+  clip-path: polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);
+  border-radius: 0;
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+}
+
+.navbar #btn-register {
+  color: #fff;
+}
+
+.navbar #btn-register:hover{
+  background-color: #7209b7;
+  color: #fff;
+}
+
+.navbar #btn-login{
+  background-color: #4361ee;
+  color: #fff;
+}
+
+.navbar #btn-login:hover{
+  background-color: #2144e2;
+  color: #fff;
+}
+
+/* Hero style */
+#hero-container {
+  background-image: url(/img/products/bg-hero.webp);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  animation: background-animation 15s infinite ease-in-out;
+  -webkit-animation: background-animation 15s infinite ease-in-out;
+}
+
+#hero-astronaut {
+  background-image: url(/img/products/img-hero-astrounaut.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 10%;
+  height: 25%;
+  position: absolute;
+  bottom: 50px;
+  right: 25px;
+  animation: animation-astronaut 20s infinite ease;
+  -webkit-animation: animation-astronaut 20s infinite ease;
+}
+
+/* .hero-bg, .hero-text {  
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+} */
+
+.hero-bg {
+  /*background: rgb(255,0,93);
+  background: linear-gradient(0deg, rgba(255,0,93,1) 0%, rgba(184,0,0,1) 100%);
+  */background-image: url(/img/products/img-hero-ship.webp);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 40%;
+  height: 40%;
+  padding: 10px;
+  animation: animation-ship 15s infinite ease-in-out;
+  -webkit-animation: animation-ship 15s infinite ease-in-out;
+}
+
+.hero-text {
+  /*background: rgb(255,255,255);
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(210,210,210,1) 100%);
+  */width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(-20deg) translateY(-20px);
+  -webkit-transform: rotate(-20deg) translateY(-20px);
+  -moz-transform: rotate(-20deg) translateY(-20px);
+  -ms-transform: rotate(-20deg) translateY(-20px);
+  -o-transform: rotate(-20deg) translateY(-20px);
+}
+
+.hero-text h2 {
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 800;
+  color: #000;
+  text-shadow: 0px 0px 10px rgb(255, 0, 0);
+}
+
+#hero-arrow {
+  position: absolute;
+  bottom: 0;
+  font-size: 48px;
+  animation: animation-arrow 1s infinite ease-in-out;
+  -webkit-animation: animation-arrow 2s infinite ease-in-out;
+}
+
+#hero-arrow a{
+  text-decoration: none;
+  color: #fff;
+
+}
+
+/* Line Divided Styles */
+.line-divided {
+  height: 10px;
+  background-color: #313131;
+}
+
+/* Animations */
+
+@keyframes background-animation {
+  0% {
+    background-size: 100%;
+    background-position: 25% 75%;
+  }
+  50% {
+    background-size: 110%;
+    background-position: 100%;
+  }
+  100% {
+    background-size: 100%;
+    background-position: 25% 75%;
+  }
+}
+
+@keyframes animation-ship {
+  0% {
+    transform: scale(.9) rotate(-45deg);
+    -webkit-transform: scale(.9) rotate(-45deg);
+    -moz-transform: scale(.9) rotate(-45deg);
+    -ms-transform: scale(.9) rotate(-45deg);
+    -o-transform: scale(.9) rotate(-45deg);
+}
+  50% {
+    transform: scale(1.05) rotate(0deg);
+    -webkit-transform: scale(1.05) rotate(0deg);
+    -moz-transform: scale(1.05) rotate(0deg);
+    -ms-transform: scale(1.05) rotate(0deg);
+    -o-transform: scale(1.05) rotate(0deg);
+}
+  100% {
+    transform: scale(.9) rotate(-45deg);
+  }
+}
+
+@keyframes animation-astronaut {
+  0% {
+    transform: translate(-20px, 40px);
+    -webkit-transform: translate(-20px, 40px);
+    -moz-transform: translate(-20px, 40px);
+    -ms-transform: translate(-20px, 40px);
+    -o-transform: translate(-20px, 40px);
+  } 
+  50% {
+    transform: translate(-30px, 30px);
+    -webkit-transform: translate(-30px, 30px);
+    -moz-transform: translate(-30px, 30px);
+    -ms-transform: translate(-30px, 30px);
+    -o-transform: translate(-30px, 30px);
+  }
+  75% {
+    transform: translate(-50px, -70px);
+    -webkit-transform: translate(-50px, -70px);
+    -moz-transform: translate(-50px, -70px);
+    -ms-transform: translate(-50px, -70px);
+    -o-transform: translate(-50px, -70px);
+  }
+100% {
+    transform: translate(-20px, 40px);
+    -webkit-transform: translate(-20px, 40px);
+    -moz-transform: translate(-20px, 40px);
+    -ms-transform: translate(-20px, 40px);
+    -o-transform: translate(-20px, 40px);
+  }
+}
+
+@keyframes animation-arrow {
+  0% {
+    transform: translateY(-20px);
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
+}
+  50% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+}
+  100% {
+    transform: translateY(-20px);
+  }
+}

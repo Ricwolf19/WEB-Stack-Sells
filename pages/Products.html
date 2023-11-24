@@ -4,22 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stack Sells</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/img/favicon.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style-products.css">
 </head>
 <body>
+ <!-- Navbar -->
+  <nav class="navbar navbar-expand-sm fixed-top">
+    <div class="container">
+      <h1 class="navbar-brand">Stack-Sells</h1>
+      <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/index.html" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pages/Products.html">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Reviews.html">Reviews</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Support.html">Support</a>
+          </li>
+        </ul>
+        <div class="d-flex gap-2 my-2 my-lg-0">
+          <a id="btn-register" class="btn" type="submit">Register</a>
+          <a id="btn-login" class="btn" type="submit">Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-    <header>
-        <h1>Stack Sells</h1>
-        <nav>
-          <ul>
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="Reviews.html">Reviews</a></li>
-            <li><a href="Support.html">Support</a></li>
-          </ul>
-        </nav>
-    </header>
+  <!-- Hero -->
+  <div id="hero-container">
+    <div class="hero-bg">
+      <div class="hero-text">
+        <h2>Products</h2>
+      </div>
+    </div>
+    <div id="hero-astronaut">
+      
+    </div>
+    <div id="hero-arrow">
+      <a href="#products"><i class="bi bi-arrow-down-circle-fill"></i></a>
+    </div>
+  </div>
 
-    <section id="agregar">
+  <div class="line-divided"></div>
+    <!-- <section id="agregar">
         <h2>Add new product</h2>
         <form id="formProducto">
           <label for="nombre">Name:</label>
@@ -36,9 +72,9 @@
     
           <button type="submit">Agregar Producto</button>
         </form>
-    </section>
+    </section> -->
 
-    <section id="productos">
+    <!-- <section id="productos">
         <h2>Lista de Productos</h2>
         <div id="productos-container"></div>
     </section>
@@ -46,8 +82,9 @@
     <section id="carrito">
         <h2>Carrito de Compras</h2>
         <div id="carrito-container"></div>
-    </section>
+    </section> -->
 
     <script src="/js/AddProducts.js"></script>
+    <script type="module" src="/main.js"></script>
 </body>
 </html>
