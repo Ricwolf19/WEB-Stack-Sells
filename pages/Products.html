@@ -89,6 +89,47 @@
       </div>
     </section>
 
+    <!-- Button add product -->
+    <button id="add-product-btn" class="btn rounded-circle" data-bs-toggle="modal" data-bs-target="#addProductModal">
+      <i class="bi bi-plus-circle-fill"></i>
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5" id="exampleModalLabel">Add Product</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="formProduct">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" name="name" id="name" class="form-control" placeholder="Ex. NVIDIA GeForce GTX 1660" required>
+              </div>  
+
+              <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" name="price" id="price" class="form-control" placeholder="Ex. 3499" required>
+              </div>
+              
+              <div class="mb-3">
+                <label for="inventory" class="form-label">Inventory</label>
+                <input type="number" name="inventory" id="inventory" class="form-control" placeholder="Ex. 2" aria-describedby="helpId">
+              </div>
+
+              <div class="mb-3">
+                <label for="image" class="form-label">Image Url</label>
+                <input type="text" name="image" id="image" class="form-control" placeholder="Ex. https://ddtech.mx/assets/uploads/4f7751c5d2a353708dd97cbb6b4c01cd.png">
+              </div>
+        
+              <button id="add-product" type="submit" class="btn">Add Product</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- <section id="carrito">
         <h2>Carrito de Compras</h2>
         <div id="carrito-container"></div>
