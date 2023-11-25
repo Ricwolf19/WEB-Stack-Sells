@@ -166,14 +166,6 @@ body {
 }
 
 /* Products Styles */
-#products-container {
-
-}
-
-#products-bg,#product-title  {
-
-}
-
 #products-bg {
   background-color: #313131;
   height: 15vh;
@@ -200,7 +192,10 @@ body {
 #products-title h2 {
   font-size: 45px;
   font-weight: bold;
+}
 
+#products-title p {
+  font-style: italic;
 }
 
 #product-list-bg {
