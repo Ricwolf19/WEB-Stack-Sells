@@ -4,33 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stack Sells - Reviews</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/img/favicon.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style-reviews.css">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <header>
-        <h1>Stack Sells</h1>
-        <nav>
-          <ul>
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="Products.html">Products</a></li>
-            <li><a href="Support.html">Support</a></li>
-          </ul>
-        </nav>
-    </header>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-sm sticky-top">
+      <div class="container">
+      <h1 class="navbar-brand" href="#">Stack-Sells</h1>
+      <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Products.html">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Reviews</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Support.html">Support</a>
+          </li>
+        </ul>
+        <div class="d-flex gap-2 my-2 my-lg-0">
+          <a id="btn-register" class="btn" type="submit">Register</a>
+          <a id="btn-login" class="btn" type="submit">Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Hero -->
+  <div id="hero-container">
+    <div id="hero-bg">
+      <div id="hero-text">
+        <div id="hero-text-bg">
+            <h2>Reviews and Feedback for <span>Stack-Sells</span></h2>
+        </div>
+      </div>
+    </div>
+  </div>
 
      <section id="dejar-resena-form">
-        <h2>Deja tu reseña</h2>
+        <div id="a-title-bg">
+            <div id="a-title">
+                <h2>Leave Your Review</h2>
+            </div>
+          </div>
         <form>
-            <button type="button" onclick="dejarReseña()">Dejar Reseña</button>
+            <button id="btn-review" type="button" onclick="dejarReseña()">Leave Review</button>
         </form>
     </section>
 
     <section id="reseñas">
-        <h2>Reviews Stack Sells</h2>
-        <div id="reseñas-container"></div>
+        <div id="b-title-bg">
+            <div id="b-title">
+                <h2 style="text-align: center;">Stack Sells Reviews</h2>
+            </div>
+        </div>
+        <div id="reseñas-bg">
+            <div id="reseñas-container"></div>
+        </div>
     </section>
 
     <script src="/js/Reviews.js"></script>
+    <script type="module" src="/main.js"></script>
 </body>
 </html>

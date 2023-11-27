@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Kdam+Thmor+Pro&display=swap');
+
+/* Fonts */
+body {
+  position: relative;
+  font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
+.navbar {
+  background-color: #fff;
+  border-bottom: 5px solid #fff;
+  border-image: linear-gradient(to left, #8A2BE2, #4B0082) 1;
+  font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
+.navbar-nav a {
+  border-bottom: 3px solid transparent;
+}
+
+.navbar-nav a.active {
+  border-bottom: 3px solid #ff006e;
+}
+
+.navbar-nav a.active:hover {
+  border-bottom: 3px solid #ff006e;
+}
+
+.navbar-nav a:hover {
+  border-bottom: 3px solid #00b4d8;
+}
+
+.navbar .btn {
+  clip-path: polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);
+  border-radius: 0;
+  transition: all 1s;
+}
+
+.navbar #btn-register:hover {
+  background-color: #7209b7;
+  color: #fff;
+}
+
+.navbar #btn-login {
+  background-color: #4361ee;
+  color: #fff;
+}
+
+.navbar #btn-login:hover {
+  background-color: #2144e2;
+  color: #fff;
+}
+
+/* Hero Styles */
+#hero-container {
+  height: 50vh;
+}
+
+#hero-bg,
+#hero-text {
+  clip-path: polygon(100% 0, 100% 95%, 95% 100%, 0 100%, 0 0);
+}
+
+#hero-bg {
+  background-image: linear-gradient(to left, #8A2BE2, #4B0082);
+  height: 100%;
+  padding: 0 10px 10px 0;
+}
+
+#hero-text {
+  background: rgb(255, 255, 255);
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(210, 210, 210, 1) 100%);
+  height: 100%;
+}
+
+#hero-text-bg {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Chakra Petch', sans-serif;
+  position: relative;
+}
+
+#hero-text h2 {
+  font-size: 72px;
+  font-weight: 400;
+}
+
+#hero-text span {
+  font-weight: bold;
+}
+
+/* Review Card Styles */
+.review-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  width: 200px;
+  height: 300px;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 10px;
+  margin-left: 10px;
+  animation: fade-in 0.5s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Leave a Review Section */
+#dejar-resena-form {
+  text-align: center;
+  margin-top: 30px;
+}
+
+#dejar-resena-form h2 {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Reviews Section */
+#reseñas {
+  text-align: center;
+  margin-top: 30px;
+}
+
+#reseñas h2 {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+#reseñas-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Leave a Review Button */
+#btn-review {
+  clip-path: polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);
+  border-radius: 0;
+  transition: all 1s;
+  padding: 15px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #4B0082;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#btn-review:hover {
+  background-color: #7209b7;
+}
+
+/* A-Title Section */
+#a-title-bg {
+  background: linear-gradient(90deg, #6A0DAD, #0C056D);
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+  padding: 8px;
+  animation: background-animation-a-title 5s infinite ease-in-out alternate;
+  margin-bottom: 25px;
+}
+
+#a-title {
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+#a-title h2 {
+  font-size: 28px;
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: #6A0DAD;
+}
+
+/* B-Title Section */
+#b-title-bg {
+  background: linear-gradient(90deg, #4F51C0, #8E44AD);
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+  padding: 8px;
+  animation: background-animation-b-title 5s infinite ease-in-out alternate;
+  margin-bottom: 25px;
+}
+
+#b-title {
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+#b-title h2 {
+  font-size: 28px;
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: #4F51C0;
+}
+
+/* Animaciones para A-Title Background */
+@keyframes background-animation-a-title {
+  0%, 100% {
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+    background-position: 0% 0%;
+  }
+  50% {
+    clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);
+    background-position: 100% 0%;
+  }
+}
+
+/* Animaciones para B-Title Background */
+@keyframes background-animation-b-title {
+  0%, 100% {
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+    background-position: 0% 0%;
+  }
+  50% {
+    clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);
+    background-position: 100% 0%;
+  }
+}
+
+/* Review Background Section */
+#reseñas-bg {
+  clip-path: polygon(5% 0, 100% 0, 100% calc(100% - 5%), calc(100% - 5%) 100%, 0 100%, 0 5%);
+  background: linear-gradient(135deg, #7209b7, #3f51b5, #c5c5c5);
+  margin-top: 10px;
+  padding: 38px;
+  width: 99.5%;
+  max-width: 99.5%;
+  margin: 10px auto 20px auto; /* Márgenes uniformes */
+  position: relative;
+  overflow: hidden; /* Para evitar que el pseudo-elemento genere scrollbars */
+  z-index: 1; /* Asegura que el contenido esté sobre el pseudo-elemento */
+  border-radius: 10px; /* Ajusta según sea necesario */
+  position: relative;
+}
+
+#reseñas-bg::before {
+  content: '';
+  position: absolute;
+  width: 300%; /* Ajusta según sea necesario para cubrir todo el contenedor */
+  height: 300%; /* Ajusta según sea necesario para cubrir todo el contenedor */
+  top: -100%; /* Ajusta según sea necesario para cubrir todo el contenedor */
+  left: -100%; /* Ajusta según sea necesario para cubrir todo el contenedor */
+  animation: background-animation 8s ease infinite alternate;
+  z-index: -1;
+  background: linear-gradient(135deg, #7209b7, #3f51b5, #c5c5c5);
+  filter: hue-rotate(0deg); /* Inicializa el filtro sin rotación */
+}
+
+@keyframes background-animation {
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}

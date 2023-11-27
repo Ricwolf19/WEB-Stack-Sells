@@ -36,14 +36,6 @@ body {
   color: #fff;
 }
 
-.navbar-nav a.active {
-  border-bottom: 3px solid #ff006e;
-}
-
-.navbar-nav a.active:hover {
-  border-bottom: 3px solid #ff006e;
-}
-
 .navbar-nav a:hover{
   border-bottom: 3px solid #00b4d8;
   color: #d8d8d8;
@@ -76,6 +68,16 @@ body {
 
 .navbar #btn-login:hover{
   background-color: #2144e2;
+  color: #fff;
+}
+
+.navbar-nav a.active {
+  border-bottom: 3px solid #ff006e;
+  color: #fff;
+}
+
+.navbar-nav a.active:hover {
+  border-bottom: 3px solid #ff006e;
   color: #fff;
 }
 

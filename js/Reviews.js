@@ -6,51 +6,97 @@ class Reseña {
     this.comentario = comentario;
   }
 
-  // Método que devuelve el HTML para mostrar la reseña
   obtenerHTML() {
+    // Crear el contenedor principal de la tarjeta de reseña
     const card = document.createElement('div');
-    card.classList.add('reseña-card');
-
+    card.classList.add('review-card');
+    
+    // Crear el borde de la tarjeta de reseña
+    const border = document.createElement('div');
+    border.classList.add('review-border');
+    card.appendChild(border);
+    
+    // Crear el ícono del usuario
     const usuarioIcono = document.createElement('span');
-    usuarioIcono.classList.add('usuario-icon');
+    usuarioIcono.classList.add('user-icon');
     usuarioIcono.textContent = '👤';
-
+    usuarioIcono.style.fontSize = '50px'; // Ajustar el tamaño del ícono según sea necesario
+    
+    // Crear el contenedor de las estrellas para la puntuación
+    const stars = document.createElement('div');
+    stars.classList.add('stars');
+    
+    // Generar las estrellas según la puntuación recibida
+    const rating = parseInt(this.puntuacion);
+    for (let i = 0; i < 5; i++) {
+      const star = document.createElement('span');
+      star.textContent = i < rating ? '⭐' : ' '; // Mostrar estrella llena o vacía según la puntuación
+      star.style.color = '#FFD700'; // Establecer el color amarillo para las estrellas
+      stars.appendChild(star);
+    }
+    
+    // Crear el contenedor de la información de la reseña
     const info = document.createElement('div');
+    info.classList.add('review-info');
     info.innerHTML = `
-      <p>Usuario: ${this.usuario}</p>
-      <p>Puntuación: ${this.puntuacion} ⭐</p>
-      <p>Comentario: ${this.comentario}</p>
+      <p><strong>Usuario:</strong> <em>${this.usuario}</em></p>
+      <p><strong>Puntuación:</strong> <em>${this.puntuacion}</em></p>
+      <p><strong>Comentario:</strong> <em>${this.comentario}</em></p>
     `;
-
+    info.style.marginLeft = '10px'; // Ajustar el margen izquierdo según sea necesario
+    
+    // Agregar los elementos creados al contenedor principal de la tarjeta
     card.appendChild(usuarioIcono);
+    card.appendChild(stars); // Agregar las estrellas al elemento de la tarjeta
     card.appendChild(info);
+    
+    // Establecer estilos para la tarjeta de reseña
+    card.style.padding = '15px'; // Espaciado interno
+    card.style.marginBottom = '15px'; // Espaciado inferior
+    card.style.backgroundColor = '#f9f9f9'; // Color de fondo
+    card.style.display = 'inline-block'; // Mostrar las tarjetas una al lado de la otra
+    card.style.width = 'calc(25% - 20px)'; // Definir el ancho para que quepan 4 tarjetas en una fila
 
-    return card;
-  }
+    // Función para generar un color aleatorio excluyendo el blanco (#FFFFFF)
+    function getRandomColor() {
+      const purpleBlueColors = ['#0000FF', '#9370DB', '#8A2BE2', '#4B0082', '#483D8B', '#6A5ACD', '#8A2BE2', '#483D8B', '#00008B', '#0000CD', '#4169E1', '#6495ED', '#1E90FF', '#4682B4', '#87CEEB', '#87CEFA', '#00BFFF', '#ADD8E6', '#B0C4DE', '#5F9EA0'];
+      const randomIndex = Math.floor(Math.random() * purpleBlueColors.length);
+      return purpleBlueColors[randomIndex];
+    }    
+
+    // Generar un color aleatorio para el borde excluyendo el blanco
+    let randomColor = getRandomColor();
+    while (randomColor === '#FFFFFF') {
+      randomColor = getRandomColor(); // Si el color generado es blanco, generar uno nuevo
+    }
+    border.style.border = `2px solid ${randomColor}`; // Aplicar borde con el color aleatorio
+    
+    return card; // Devolver la tarjeta de reseña completa
+  }  
 }
 
 // Array que almacena las reseñas existentes
 const reseñas = [
-  new Reseña('Usuario1', 4, 'Gran experiencia de compra en Stack Sells. ¡Recomiendo totalmente!'),
-  new Reseña('Usuario2', 5, 'Productos de alta calidad y entrega rápida. ¡Volveré a comprar!'),
-  new Reseña('Usuario3', 3, 'Buen servicio al cliente, pero el envío fue un poco lento.'),
-  new Reseña('Usuario4', 4, 'Variedad de productos y precios justos. Buena experiencia.'),
-  new Reseña('Usuario5', 2, 'Producto defectuoso recibido. La devolución fue complicada.'),
-  new Reseña('Usuario6', 5, 'Increíble selección de productos. Rápido y eficiente.'),
-  new Reseña('Usuario7', 3, 'El producto no cumplió completamente con mis expectativas.'),
-  new Reseña('Usuario8', 4, 'Gran calidad y atención al cliente. Envío rápido.'),
-  new Reseña('Usuario9', 5, '¡Me encanta comprar aquí! Todo siempre llega perfecto.'),
-  new Reseña('Usuario10', 2, 'Problemas con la facturación. El servicio al cliente fue útil.'),
-  new Reseña('Usuario11', 4, 'Buenos precios y entrega rápida. Sin quejas.'),
-  new Reseña('Usuario12', 5, 'Productos únicos y de alta calidad. Muy satisfecho.'),
-  new Reseña('Usuario13', 3, 'La interfaz del sitio web podría mejorar. Buena variedad.'),
-  new Reseña('Usuario14', 4, 'Fácil proceso de compra. Productos bien embalados.'),
-  new Reseña('Usuario15', 5, '¡Maravilloso! Gran atención al cliente y productos exclusivos.'),
-  new Reseña('Usuario16', 3, 'Algunos productos estaban agotados. Buena experiencia en general.'),
-  new Reseña('Usuario17', 4, 'Precios competitivos. Envío dentro del plazo estimado.'),
-  new Reseña('Usuario18', 5, 'Nunca decepciona. Siempre encuentro lo que necesito.'),
-  new Reseña('Usuario19', 3, 'Atención al cliente receptiva. La calidad del producto podría mejorar.'),
-  new Reseña('Usuario20', 4, 'Sitio confiable. Buenos precios y servicio rápido.'),
+  new Reseña('Messi', 4, 'Gran experiencia de compra en Stack Sells. ¡Recomiendo totalmente!'),
+  new Reseña('Ronaldo', 5, 'Productos de alta calidad y entrega rápida. ¡Volveré a comprar!'),
+  new Reseña('Neymar', 3, 'Buen servicio al cliente, pero el envío fue un poco lento.'),
+  new Reseña('Mbappé', 4, 'Variedad de productos y precios justos. Buena experiencia.'),
+  new Reseña('Haaland', 2, 'Producto defectuoso recibido. La devolución fue complicada.'),
+  new Reseña('Lewandowski', 5, 'Increíble selección de productos. Rápido y eficiente.'),
+  new Reseña('Salah', 3, 'El producto no cumplió completamente con mis expectativas.'),
+  new Reseña('Kane', 4, 'Gran calidad y atención al cliente. Envío rápido.'),
+  new Reseña('De Bruyne', 5, '¡Me encanta comprar aquí! Todo siempre llega perfecto.'),
+  new Reseña('Sterling', 2, 'Problemas con la facturación. El servicio al cliente fue útil.'),
+  new Reseña('Suárez', 4, 'Buenos precios y entrega rápida. Sin quejas.'),
+  new Reseña('Griezmann', 5, 'Productos únicos y de alta calidad. Muy satisfecho.'),
+  new Reseña('Kroos', 3, 'La interfaz del sitio web podría mejorar. Buena variedad.'),
+  new Reseña('Modric', 4, 'Fácil proceso de compra. Productos bien embalados.'),
+  new Reseña('Pogba', 5, '¡Maravilloso! Gran atención al cliente y productos exclusivos.'),
+  new Reseña('Kante', 3, 'Algunos productos estaban agotados. Buena experiencia en general.'),
+  new Reseña('Ramos', 4, 'Precios competitivos. Envío dentro del plazo estimado.'),
+  new Reseña('Neuer', 5, 'Nunca decepciona. Siempre encuentro lo que necesito.'),
+  new Reseña('Hazard', 3, 'Atención al cliente receptiva. La calidad del producto podría mejorar.'),
+  new Reseña('Lloris', 4, 'Sitio confiable. Buenos precios y servicio rápido.'),  
 ];
 
 reseñas.push(...getReviewsFromLocalStorage());

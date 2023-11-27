@@ -445,6 +445,7 @@ font-weight: bold;
 /* Reviews & Products styles */
 #message-container {
   width: 100%;
+  margin-top: 60px;
 }
 
 #message-bg {
