@@ -135,36 +135,43 @@ body {
   margin-top: 30px;
 }
 
+/* Animación para los labels */
 #formSolicitud label {
-    font-size: 18px;
-    color: #333; /* Gris oscuro */
-    margin-bottom: 12px;
-    font-weight: bold;
-  }
-  
-  #formSolicitud input[type="text"],
-  #formSolicitud textarea {
-    padding: 12px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    width: 80%;
-    margin-bottom: 20px;
-    transition: border-color 0.3s ease-in-out;
-    color: #333; /* Gris oscuro */
-  }
-  
-  #formSolicitud input[type="text"]:focus,
-  #formSolicitud textarea:focus {
-    outline: none;
-    border-color: #7209b7; /* Morado */
-    color: #333; /* Gris oscuro */
-  }  
+  font-size: 18px;
+  color: #333; /* Gris oscuro */
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-family: 'Chakra Petch', sans-serif; /* Fuente personalizada */
+  position: relative;
+  transition: transform 0.3s ease-in-out; /* Animación al enfocarse */
+}
+
+#formSolicitud input[type="text"]:focus + label,
+#formSolicitud textarea:focus + label {
+  transform: translateY(-30px) scale(0.8); /* Mueve el label hacia arriba y lo hace más pequeño */
+  color: #7209b7; /* Cambia el color del label al enfocarse */
+}
+
+/* Animación para los inputs */
+#formSolicitud input[type="text"],
+#formSolicitud textarea {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 80%;
+  margin-bottom: 20px;
+  transition: border-color 0.3s ease-in-out; /* Animación al enfocarse */
+  color: #333; /* Gris oscuro */
+  font-family: 'Chakra Petch', sans-serif; /* Fuente personalizada */
+}
 
 #formSolicitud input[type="text"]:focus,
 #formSolicitud textarea:focus {
   outline: none;
-  border-color: #4B0082; /* Morado */
+  border-color: #7209b7; /* Morado */
+  color: #333; /* Gris oscuro */
+  font-family: 'Chakra Petch', sans-serif; /* Fuente personalizada */
 }
 
 #formSolicitud textarea {
