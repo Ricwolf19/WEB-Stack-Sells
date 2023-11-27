@@ -9,8 +9,8 @@ body {
 
 /* Estilos de la barra de navegación */
 .navbar {
-  background-color: #fff;
-  border-bottom: 5px solid #fff;
+  background-color: #E0E5EC; /* Azul grisáceo */
+  border-bottom: 5px solid #E0E5EC; /* Mismo azul grisáceo */
   border-image: linear-gradient(to left, #8A2BE2, #4B0082) 1;
   font-family: 'Kdam Thmor Pro', sans-serif;
 }
@@ -20,15 +20,15 @@ body {
 }
 
 .navbar-nav a.active {
-  border-bottom: 3px solid #ff006e;
+  border-bottom: 3px solid #7209b7; /* Morado */
 }
 
 .navbar-nav a.active:hover {
-  border-bottom: 3px solid #ff006e;
+  border-bottom: 3px solid #7209b7; /* Morado */
 }
 
 .navbar-nav a:hover {
-  border-bottom: 3px solid #00b4d8;
+  border-bottom: 3px solid #4361ee; /* Azul */
 }
 
 .navbar .btn {
@@ -38,17 +38,17 @@ body {
 }
 
 .navbar #btn-register:hover {
-  background-color: #7209b7;
+  background-color: #7209b7; /* Morado */
   color: #fff;
 }
 
 .navbar #btn-login {
-  background-color: #4361ee;
+  background-color: #4361ee; /* Azul */
   color: #fff;
 }
 
 .navbar #btn-login:hover {
-  background-color: #2144e2;
+  background-color: #2144e2; /* Azul más oscuro */
   color: #fff;
 }
 
@@ -66,7 +66,7 @@ body {
   font-family: 'Chakra Petch', sans-serif;
   font-size: 36px;
   margin-bottom: 20px;
-  color: #4B0082;
+  color: #4B0082; /* Morado */
 }
 
 #solicitud-soporte form {
@@ -96,7 +96,7 @@ body {
   font-family: 'Chakra Petch', sans-serif;
   font-size: 36px;
   margin-bottom: 20px;
-  color: #4B0082;
+  color: #4B0082; /* Morado */
 }
 
 #solicitudes-lista {
@@ -136,27 +136,35 @@ body {
 }
 
 #formSolicitud label {
-  font-size: 18px;
-  color: #4B0082;
-  margin-bottom: 12px;
-  font-weight: bold;
-}
-
-#formSolicitud input[type="text"],
-#formSolicitud textarea {
-  padding: 12px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  width: 80%;
-  margin-bottom: 20px;
-  transition: border-color 0.3s ease-in-out;
-}
+    font-size: 18px;
+    color: #333; /* Gris oscuro */
+    margin-bottom: 12px;
+    font-weight: bold;
+  }
+  
+  #formSolicitud input[type="text"],
+  #formSolicitud textarea {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 80%;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease-in-out;
+    color: #333; /* Gris oscuro */
+  }
+  
+  #formSolicitud input[type="text"]:focus,
+  #formSolicitud textarea:focus {
+    outline: none;
+    border-color: #7209b7; /* Morado */
+    color: #333; /* Gris oscuro */
+  }  
 
 #formSolicitud input[type="text"]:focus,
 #formSolicitud textarea:focus {
   outline: none;
-  border-color: #7209b7;
+  border-color: #4B0082; /* Morado */
 }
 
 #formSolicitud textarea {
@@ -166,7 +174,7 @@ body {
 #formSolicitud button[type="submit"] {
   padding: 12px 24px;
   font-size: 18px;
-  background-color: #4B0082;
+  background-color: #4B0082; /* Morado */
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -175,7 +183,7 @@ body {
 }
 
 #formSolicitud button[type="submit"]:hover {
-  background-color: #7209b7;
+  background-color: #333; /* Morado */
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -214,7 +222,7 @@ body {
 
 .solicitud-nombre {
   font-size: 20px;
-  color: #4B0082;
+  color: #333; /* Morado */
   margin: 0;
 }
 
@@ -223,3 +231,5 @@ body {
   color: #333;
   margin: 0;
 }
+
+/*... (cualquier otro CSS adicional sigue aquí) ...*/
