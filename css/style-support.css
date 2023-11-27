@@ -1,0 +1,242 @@
+/* Importar fuentes externas */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Kdam+Thmor+Pro&display=swap');
+
+/* Estilos generales */
+body {
+  position: relative;
+  font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
+/* Estilos de la barra de navegación */
+.navbar {
+  background-color: #E0E5EC; /* Azul grisáceo */
+  border-bottom: 5px solid #E0E5EC; /* Mismo azul grisáceo */
+  border-image: linear-gradient(to left, #8A2BE2, #4B0082) 1;
+  font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
+.navbar-nav a {
+  border-bottom: 3px solid transparent;
+}
+
+.navbar-nav a.active {
+  border-bottom: 3px solid #7209b7; /* Morado */
+}
+
+.navbar-nav a.active:hover {
+  border-bottom: 3px solid #7209b7; /* Morado */
+}
+
+.navbar-nav a:hover {
+  border-bottom: 3px solid #4361ee; /* Azul */
+}
+
+.navbar .btn {
+  clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+  border-radius: 0;
+  transition: all 1s;
+}
+
+.navbar #btn-register:hover {
+  background-color: #7209b7; /* Morado */
+  color: #fff;
+}
+
+.navbar #btn-login {
+  background-color: #4361ee; /* Azul */
+  color: #fff;
+}
+
+.navbar #btn-login:hover {
+  background-color: #2144e2; /* Azul más oscuro */
+  color: #fff;
+}
+
+/* Estilos para la sección de Solicitud de Soporte */
+#solicitud-soporte {
+  text-align: center;
+  margin-top: 30px;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+#solicitud-soporte h2 {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #4B0082; /* Morado */
+}
+
+#solicitud-soporte form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#solicitud-soporte form label,
+#solicitud-soporte form textarea,
+#solicitud-soporte form input[type="text"],
+#solicitud-soporte form button {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+#solicitudes-pendientes {
+  text-align: center;
+  margin-top: 30px;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+#solicitudes-pendientes h2 {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #4B0082; /* Morado */
+}
+
+#solicitudes-lista {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#solicitudes-lista li {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 10px;
+  background-color: #fff;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#solicitudes-lista li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el formulario de Solicitud de Soporte */
+#formSolicitud {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+/* Animación para los labels */
+#formSolicitud label {
+  font-size: 18px;
+  color: #333; /* Gris oscuro */
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-family: 'Chakra Petch', sans-serif; /* Fuente personalizada */
+  position: relative;
+  transition: transform 0.3s ease-in-out; /* Animación al enfocarse */
+}
+
+#formSolicitud input[type="text"]:focus + label,
+#formSolicitud textarea:focus + label {
+  transform: translateY(-30px) scale(0.8); /* Mueve el label hacia arriba y lo hace más pequeño */
+  color: #7209b7; /* Cambia el color del label al enfocarse */
+}
+
+/* Animación para los inputs */
+#formSolicitud input[type="text"],
+#formSolicitud textarea {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 80%;
+  margin-bottom: 20px;
+  transition: border-color 0.3s ease-in-out; /* Animación al enfocarse */
+  color: #333; /* Gris oscuro */
+  font-family: 'Chakra Petch', sans-serif; /* Fuente personalizada */
+}
+
+#formSolicitud input[type="text"]:focus,
+#formSolicitud textarea:focus {
+  outline: none;
+  border-color: #7209b7; /* Morado */
+  color: #333; /* Gris oscuro */
+  font-family: 'Chakra Petch', sans-serif; /* Fuente personalizada */
+}
+
+#formSolicitud textarea {
+  height: 120px;
+}
+
+#formSolicitud button[type="submit"] {
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #4B0082; /* Morado */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#formSolicitud button[type="submit"]:hover {
+  background-color: #333; /* Morado */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos mejorados para la lista de solicitudes */
+#solicitudes-lista {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.solicitud-item {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 10px;
+  background-color: #fff;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.solicitud-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.solicitud-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.solicitud-nombre {
+  font-size: 20px;
+  color: #333; /* Morado */
+  margin: 0;
+}
+
+.solicitud-descripcion {
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+}
+
+/*... (cualquier otro CSS adicional sigue aquí) ...*/

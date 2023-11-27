@@ -3,40 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stack Sells</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <title>Stack Sells - Support</title>
+    <link rel="shortcut icon" href="/img/favicon.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style-support.css">
+    <link rel="stylesheet" href="/css/style-reviews.css">
 </head>
 <body>
 
-    <header>
-        <h1>Stack Sells</h1>
-        <nav>
-          <ul>
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="Products.html">Products</a></li>
-            <li><a href="Reviews.html">Reviews</a></li>
-          </ul>
-        </nav>
-    </header>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-sm sticky-top">
+      <div class="container">
+      <h1 class="navbar-brand" href="#">Stack-Sells</h1>
+      <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home <span class="visually-hidden">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Products.html">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Reviews.html">Reviews</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Support</a>
+          </li>
+        </ul>
+        <div class="d-flex gap-2 my-2 my-lg-0">
+          <a id="btn-register" class="btn" type="submit">Register</a>
+          <a id="btn-login" class="btn" type="submit">Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Rest of the content -->
+  <section id="solicitud-soporte">
+    <h2>Submit Support Request</h2>
+    <form id="formSolicitud">
+      <label for="nombre">Name:</label>
+      <input type="text" id="nombre" required><br><br>
 
-    <section id="solicitud-soporte">
-        <h2>Enviar Solicitud de Soporte</h2>
-        <form id="formSolicitud">
-          <label for="nombre">Nombre:</label>
-          <input type="text" id="nombre" required><br><br>
-    
-          <label for="descripcion">Descripción:</label>
-          <textarea id="descripcion" required></textarea><br><br>
-    
-          <button type="submit">Enviar Solicitud</button>
-        </form>
-    </section>
+      <label for="descripcion">Description:</label>
+      <textarea id="descripcion" required></textarea><br><br>
 
-    <section id="solicitudes-pendientes">
-        <h2>Solicitudes Pendientes</h2>
-        <ul id="solicitudes-lista"></ul>
-    </section>
+      <button type="submit">Submit Request</button>
+    </form>
+  </section>
 
+  <section id="solicitudes-pendientes">
+    <h2>Pending Requests</h2>
+    <ul id="solicitudes-lista" class="review-container"></ul>
+  </section>
+
+  <script src="/js/Support.js"></script>
+  <script type="module" src="/main.js"></script>
 </body>
-<script src="/js/Support.js"></script>
 </html>
