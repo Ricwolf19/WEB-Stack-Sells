@@ -1,3 +1,32 @@
+/*
+Justificación del uso de listas o arrays en el backend:
+
+1. Almacenamiento de Datos:
+   - Las listas permiten almacenar y organizar datos de manera estructurada y accesible en el backend. Son esenciales para 
+   almacenar información sobre productos, reseñas y solicitudes de soporte.
+
+2. Gestión de Información:
+   - Los arrays proporcionan una forma eficiente de manejar conjuntos de datos. Por ejemplo, en el caso de productos, una 
+   lista puede contener objetos que representan cada producto con sus atributos. Del mismo modo, las reseñas y solicitudes 
+   de soporte pueden organizarse en arrays para un fácil acceso y manipulación de la información.
+
+3. Facilidad de Manipulación:
+   - Las listas permiten realizar operaciones comunes como agregar, eliminar o modificar elementos. En el backend, esto es 
+   útil para manejar nuevas reseñas, agregar nuevos productos o administrar solicitudes de soporte entrantes.
+
+4. Flexibilidad y Escalabilidad:
+   - Utilizar listas o arrays proporciona una estructura flexible que se adapta a cambios o expansiones en el sitio web. La 
+   adición de nuevos productos o reseñas puede lograrse eficientemente utilizando estas estructuras de datos.
+
+5. Optimización del Desarrollo:
+   - El uso de listas o arrays simplifica el proceso de desarrollo al permitir un manejo más sencillo de la información. 
+   Facilita la implementación de lógica para mostrar productos, reseñas o solicitudes de soporte en diferentes secciones del sitio web.
+
+El uso de listas o arrays en el backend proporciona una forma organizada y eficiente de gestionar y manipular datos relacionados 
+con productos, reseñas y solicitudes de soporte en el sitio web. Estas estructuras de datos son fundamentales para la funcionalidad 
+del backend al permitir un manejo ágil, escalable y estructurado de la información.
+*/
+
 // Clase que representa un producto
 class Producto {
   constructor(nombre, precio, inventario, imagen) {

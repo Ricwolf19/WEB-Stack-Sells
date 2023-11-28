@@ -95,6 +95,9 @@ window.addEventListener('load', mostrarSolicitudesPendientes);
 // Evento que se ejecuta cuando se envía el formulario de solicitud
 document.getElementById('formSolicitud').addEventListener('submit', enviarSolicitud);
 
+// Eliminar local storage
+/*localStorage.clear();+/
+
 /*
 Documentacion de Support.js
 
