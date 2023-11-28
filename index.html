@@ -182,57 +182,66 @@
 
   <!-- Rewiews & Supports -->
   <div id="message-container">
-    <h2 style="margin-bottom: 20px;">Contact</h2>
+    <div id="contact-title-bg">
+      <div id="contact-title">
+        <h2>Contact</h2>
+      </div>
+    </div>
     <div id="message-bg">
       <div id="message-btn">
         <button id="message-change-btn" class="btn">
-          <h3 id="message-title">Review</h3>
-          <i id="message-icon" class="bi bi-card-text"></i>
+          <h3 id="message-title">Support</h3>
+          <i id="message-icon" class="bi bi-wrench-adjustable-circle-fill"></i>
         </button>
       </div>
-      <div id="message-review">
-        <h3>Submit your review</h3>
-        <form action="">
+      <div id="message-container-form">
+        <div id="message-review">
+          <h3>Submit your review</h3>
+          <form action="">
+              <div class="mb-3">
+                <label for="nameReview" class="form-label">Name</label>
+                <input type="text" name="nameReview" id="nameReview" class="form-control" placeholder="Ex. Milton Batres" required>
+              </div>
+  
+              <div class="mb-3">
+                <label for="score" class="form-label">Score</label>
+                <input type="number" name="score" id="score" class="form-control" placeholder="Ex. 3" minlength="1" required>
+              </div>
+  
+              <div class="mb-3">
+                <label for="commet" class="form-label">Comment</label>
+                <textarea class="form-control" name="commet" id="commet" rows="3" required></textarea>
+              </div>
+            <button class="btn">Send Review</button>
+          </form>
+        </div>
+        <div id="message-support">
+          <h3>Submit your message</h3>
+          <form action="">
             <div class="mb-3">
-              <label for="nameReview" class="form-label">Name</label>
-              <input type="text" name="nameReview" id="nameReview" class="form-control" placeholder="Ex. Milton Batres" required>
+              <label for="nameSupport" class="form-label">Name</label>
+              <input type="text" name="nameSupport" id="nameSupport" class="form-control" placeholder="Ex. Juan Carlos" required>
             </div>
-
+  
             <div class="mb-3">
-              <label for="score" class="form-label">Score</label>
-              <input type="number" name="score" id="score" class="form-control" placeholder="Ex. 3" minlength="1" required>
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" name="message" id="message" rows="3" required></textarea>
             </div>
-
-            <div class="mb-3">
-              <label for="commet" class="form-label">Comment</label>
-              <textarea class="form-control" name="commet" id="commet" rows="3"></textarea>
-            </div>
-          <button class="btn">Send Review</button>
-        </form>
-      </div>
-      <div id="message-support">
-        <h3>Submit your message</h3>
-        <form action="">
-          <div class="mb-3">
-            <label for="nameSupport" class="form-label">Name</label>
-            <input type="text" name="nameSupport" id="nameSupport" class="form-control" placeholder="" aria-describedby="helpId">
-            <small id="helpId" class="text-muted">Help text</small>
-          </div>
-
-          <div class="mb-3">
-            <label for="message" class="form-label">Message</label>
-            <textarea class="form-control" name="message" id="message" rows="3"></textarea>
-          </div>
-
-          <button class="btn">Send Message</button>
-        </form>
+  
+            <button class="btn">Send Message</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
 
+  <div id="footer-container">
+
+  </div>
   <script src="/js/BestDeals.js"></script>
   
   <!-- Boostrap link -->
   <script type="module" src="main.js"></script>
+  <script src="/js/Functions.js"></script>
 </body>
 </html>
