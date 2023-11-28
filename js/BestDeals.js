@@ -22,6 +22,7 @@ class Oferta {
     const precioRedondeado = redondearPrecio(precioConDescuento);
 
     const info = document.createElement('div');
+    info.classList.add('oferta-info');
     info.innerHTML = `
       <p class="nombre">${this.nombre}</p>
       <p class="precio">Precio: $${precioRedondeado.toFixed(2)}</p>
