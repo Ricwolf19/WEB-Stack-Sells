@@ -34,6 +34,7 @@
         <div class="d-flex gap-2 my-2 my-lg-0">
           <a id="btn-register" class="btn" type="submit">Register</a>
           <a id="btn-login" class="btn" type="submit">Login</a>
+          <button id="btn-cart" class="btn text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#shopCart" aria-controls="shopCart"><i class="bi bi-cart4"></i></button>
         </div>
       </div>
     </div>
@@ -55,24 +56,6 @@
   </div>
 
   <div class="line-divided"></div>
-    <!-- <section id="agregar">
-        <h2>Add new product</h2>
-        <form id="formProducto">
-          <label for="nombre">Name:</label>
-          <input type="text" id="nombre" required><br><br>
-    
-          <label for="precio">Price:</label>
-          <input type="number" id="precio" required><br><br>
-    
-          <label for="inventario">Inventory:</label>
-          <input type="number" id="inventario" required><br><br>
-    
-          <label for="imagen">Img URL:</label>
-          <input type="url" id="imagen" placeholder="Enter the image of the product"><br><br>
-    
-          <button type="submit">Agregar Producto</button>
-        </form>
-    </section> -->
 
     <!-- Products -->
     <section id="products-container">
@@ -130,10 +113,17 @@
         </div>
       </div>
     </div>
-    <!-- <section id="carrito">
-        <h2>Carrito de Compras</h2>
-        <div id="carrito-container"></div>
-    </section> -->
+
+    <!-- Shop Car -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="shopCart" aria-labelledby="shopCart">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Shop Cart</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body" id="carrito-container">
+        
+      </div>
+    </div>
 
     <script src="/js/AddProducts.js"></script>
     <script type="module" src="/main.js"></script>

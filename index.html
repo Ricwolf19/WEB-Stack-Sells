@@ -34,6 +34,7 @@
         <div class="d-flex gap-2 my-2 my-lg-0">
           <a id="btn-register" class="btn" type="submit">Register</a>
           <a id="btn-login" class="btn" type="submit">Login</a>
+          <button id="btn-cart" class="btn text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#shopCart" aria-controls="shopCart"><i class="bi bi-cart4"></i></button>
         </div>
       </div>
     </div>
@@ -235,9 +236,17 @@
     </div>
   </div>
 
-  <div id="footer-container">
-
+  <!-- Shop Car -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="shopCart" aria-labelledby="shopCart">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasRightLabel">Shop Cart</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body" id="carrito-container">
+      
+    </div>
   </div>
+  
   <script src="/js/BestDeals.js"></script>
   
   <!-- Boostrap link -->
