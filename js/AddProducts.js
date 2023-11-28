@@ -139,7 +139,7 @@ document.getElementById('formProduct').addEventListener('submit', agregarProduct
 
 // Función que agrega un producto al carrito y actualiza la interfaz del carrito
 function agregarProductoAlCarrito(producto) {
-  const cantidadSeleccionada = prompt(`How many ${product.name} do you want to buy?`, 1);
+  const cantidadSeleccionada = prompt(`How many ${producto.name} do you want to buy?`, 1);
 
   if (cantidadSeleccionada !== null) {
     const cantidad = parseInt(cantidadSeleccionada, 10) || 1;
