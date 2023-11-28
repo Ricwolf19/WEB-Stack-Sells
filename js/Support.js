@@ -25,8 +25,7 @@ const solicitudesLocalStorage = getSuggestionsFromLocalStorage();
 // Agregar las solicitudes de localStorage al array
 solicitudesPendientes.push(...solicitudesLocalStorage);
 
-// Resto del código ...
-
+// Función para obtener las solicitudes de localStorage
 function getSuggestionsFromLocalStorage() {
   const suggestions = JSON.parse(localStorage.getItem('suggestions') || '[]');
   return suggestions.map(suggestion => new SolicitudSoporte(suggestion.nombre, suggestion.descripcion));

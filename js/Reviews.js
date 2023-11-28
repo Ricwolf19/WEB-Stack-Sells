@@ -99,8 +99,10 @@ const reseñas = [
   new Reseña('Lloris', 4, 'Sitio confiable. Buenos precios y servicio rápido.'),  
 ];
 
+// Agregar las reseñas existentes al array de reseñas
 reseñas.push(...getReviewsFromLocalStorage());
 
+// Función para obtener las reseñas existentes desde el almacenamiento local
 function getReviewsFromLocalStorage() {
   const reviews = JSON.parse(localStorage.getItem('reviews') || '[]');
   return reviews.map(review => new Reseña(review.usuario, review.puntuacion, review.comentario));

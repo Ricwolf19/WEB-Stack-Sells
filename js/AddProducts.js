@@ -60,6 +60,7 @@ const productos = [
   new Producto(getRandomName(), getRandomNumber(300, 1000), getRandomNumber(5, 25), 'https://m.media-amazon.com/images/I/51SKmu2G9FL._AC_UL320_.jpg'),
 ];
 
+// Función que obtiene el carrito de compras desde el almacenamiento local
 function getCartFromLocalStorage() {
   const cart = JSON.parse(localStorage.getItem('cart') || '[]');
   return cart.map(item => ({ producto: new Producto(item.producto.nombre, item.producto.precio, item.producto.inventario, item.producto.imagen), cantidad: item.cantidad }));
@@ -136,7 +137,7 @@ window.addEventListener('load', () => {
 // Evento que escucha el envío del formulario para agregar un producto
 document.getElementById('formProduct').addEventListener('submit', agregarProducto);
 
-
+// Función que agrega un producto al carrito y actualiza la interfaz del carrito
 function agregarProductoAlCarrito(producto) {
   const cantidadSeleccionada = prompt(`How many ${product.name} do you want to buy?`, 1);
 
