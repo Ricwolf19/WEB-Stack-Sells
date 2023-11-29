@@ -53,7 +53,7 @@ class Producto {
     `;
 
     const comprarButton = document.createElement('button');
-    comprarButton.className = "btn";
+    comprarButton.className = "btn btn-products";
     comprarButton.textContent = 'Buy';
     comprarButton.addEventListener('click', () => onComprar(this));
 
@@ -63,7 +63,29 @@ class Producto {
 
     return card;
   }
+
+  obtenerShopCartProducts(onComprar) {
+    const card = document.createElement('div');
+    card.classList.add('product-shop-card');
+
+    const img = document.createElement('img');
+    img.src = this.imagen;
+    img.alt = `Image of ${this.nombre}`;
+
+    const info = document.createElement('div');
+    info.innerHTML = `
+      <p><span>Name:</span> ${this.nombre}</p>
+      <p><span>Price:</span> $${this.precio}</p>
+    `;
+
+    card.appendChild(img);
+    card.appendChild(info);
+
+    return card;
+  }
 }
+
+
 
 // Array que contiene productos predefinidos
 const productos = [
@@ -168,7 +190,7 @@ document.getElementById('formProduct').addEventListener('submit', agregarProduct
 
 // Función que agrega un producto al carrito y actualiza la interfaz del carrito
 function agregarProductoAlCarrito(producto) {
-  const cantidadSeleccionada = prompt(`How many ${producto.name} do you want to buy?`, 1);
+  const cantidadSeleccionada = prompt(`How many ${producto.nombre} do you want to buy?`, 1);
 
   if (cantidadSeleccionada !== null) {
     const cantidad = parseInt(cantidadSeleccionada, 10) || 1;
@@ -198,13 +220,14 @@ function agregarProductoAlCarrito(producto) {
   }
 }
 
+
 // Función que muestra los productos en el carrito
 function mostrarCarritoHTML() {
   const carritoDiv = document.getElementById('carrito-container');
   carritoDiv.innerHTML = '';
 
   carrito.forEach(item => {
-    const card = item.producto.obtenerHTML(() => {}); 
+    const card = item.producto.obtenerShopCartProducts(() => {}); 
     const cantidadDiv = document.createElement('div');
     cantidadDiv.classList.add('cantidad');
     cantidadDiv.textContent = `Cantidad: ${item.cantidad}`;
@@ -212,6 +235,24 @@ function mostrarCarritoHTML() {
     carritoDiv.appendChild(card.cloneNode(true)); // Clonamos la tarjeta para evitar problemas con eventos
   });
 }
+
+function eliminarProductoDelCarrito(producto) {
+  console.log('Eliminar producto del carrito:', producto);
+  const confirmacion = confirm(`Are you sure you want to delete ${producto.nombre} from the cart?`);
+
+  if (confirmacion) {
+    // Eliminar el producto del carrito
+    const index = carrito.findIndex(item => item.producto.nombre === producto.nombre);
+
+    if (index !== -1) {
+      carrito.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(carrito));
+      mostrarCarritoHTML();
+      mostrarProductosHTML(productos, agregarProductoAlCarrito);
+    }
+  }
+}
+
 
 /*
 

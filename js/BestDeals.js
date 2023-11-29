@@ -13,10 +13,14 @@ class Oferta {
     const card = document.createElement('div');
     card.classList.add('oferta-card');
 
+    const imgContenedor = document.createElement('div');
+    imgContenedor.className = 'card-img-container';
     const img = document.createElement('img');
     img.src = this.imagen;
     img.alt = `Imagen de la oferta: ${this.nombre}`;
     img.classList.add('oferta-imagen');
+
+    imgContenedor.appendChild(img);
 
     const precioConDescuento = this.precio - (this.precio * this.descuento) / 100;
     const precioRedondeado = redondearPrecio(precioConDescuento);
@@ -24,7 +28,7 @@ class Oferta {
     const info = document.createElement('div');
     info.classList.add('oferta-info');
     info.innerHTML = `
-      <p class="nombre">${this.nombre}</p>
+      <h5 class="nombre">${this.nombre}</h5>
       <p class="precio">Precio: $${precioRedondeado.toFixed(2)}</p>
       <p class="descuento">Descuento: ${this.descuento}%</p>
       <p class="duracion">Tiempo restante: <span class="contador">${this.duracion}</span> segundos</p>
@@ -32,14 +36,14 @@ class Oferta {
 
     const comprarButton = document.createElement('button');
     comprarButton.textContent = 'Comprar';
-    comprarButton.classList.add('comprar-button');
+    comprarButton.className = "btn comprar-button";
     comprarButton.addEventListener('click', () => {
       window.location.href = '/pages/Products.html';
     });
 
     const contador = info.querySelector('.contador');
 
-    card.appendChild(img);
+    card.appendChild(imgContenedor);
     card.appendChild(info);
     card.appendChild(comprarButton);
 
