@@ -78,14 +78,8 @@ class Producto {
       <p><span>Price:</span> $${this.precio}</p>
     `;
 
-    const deleteButton = document.createElement('button');
-    deleteButton.className = "btn btn-delete";
-    deleteButton.textContent = 'Delete';
-    deleteButton.addEventListener('click', () => eliminarProductoDelCarrito(this.nombre));
-
     card.appendChild(img);
     card.appendChild(info);
-    card.appendChild(deleteButton);
 
     return card;
   }
